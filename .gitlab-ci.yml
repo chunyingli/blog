@@ -31,8 +31,8 @@ build_img:
   #   - /^release\/.+$/
   script:
     - docker login -u "$CI_REGISTRY_USER" -p "$CI_REGISTRY_PASSWORD" $CI_REGISTRY
-    - docker build -t ${IMAGE_PER_BRANCH_COMMIT//:/-api:} -t ${IMAGE_PER_BRANCH//:/-api:} --build-arg CI_JOB_TOKEN=$CI_JOB_TOKEN .
-    - docker push ${IMAGE_PER_BRANCH_COMMIT//:/-api:}
+    - docker build -t ${CI_REGISTRY_IMAGE}:${BRANCH_NAME} .
+    - docker push ${CI_REGISTRY_IMAGE}:${BRANCH_NAME}
 
 deploy:
   stage: deploy
