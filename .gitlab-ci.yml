@@ -6,6 +6,7 @@ cache:
 
 stages:
   - build
+  - build_img
   - deploy
 
 build:
@@ -26,7 +27,7 @@ variables: &VARIABLES
   IMAGE_PER_BRANCH_COMMIT: $CI_REGISTRY_IMAGE/$CI_COMMIT_REF_NAME:$CI_COMMIT_SHA
 
 build_img:
-  stage: build
+  stage: build_img
   dependencies:
     - build
   # only:
