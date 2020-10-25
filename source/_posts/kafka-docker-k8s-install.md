@@ -1,5 +1,5 @@
 ---
-title: kafka-docker-k8s-install
+title: 使用Docker和K8s安装Kafka及Manger
 comments: true
 mp3: 'http://link.hhtjim.com/163/425570952.mp3'
 cover: /img/welcome-cover.jpeg
